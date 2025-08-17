@@ -11,8 +11,12 @@ end
 
 bind \cf fzf-file-widget
 
+fish_default_key_bindings
+set fish_cursor_default block
+
 alias n='nvim'
 alias z='~/Downloads/zellij'
+alias l="ls -alh"
 
 # overwrite greeting
 # potentially disabling fastfetch
