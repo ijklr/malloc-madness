@@ -1,0 +1,27 @@
+
+Input: 
+node A        node B      node C      node D      node E
+{7, B, NULL}  {13, C, A}  {11, D, E}  {10, E, C}  {1, NULL, A}
+
+
+Pass 1: First pass create the new nodes, and point each old node to new node
+Idea is to re-use the original to function as a hash table.
+
+Original:
+node A        node B      node C         node D       node E
+{7, A', NULL}  {13, B', A}  {11, C', E}  {10, D', C}  {1, NULL, A}
+
+Copy:
+node A'      node B'      node C'           node D'       node E'
+{7, B', NULL}   {13, C', A}   {11, D', E}   {10, E', C}   {1, NULL, A}
+
+
+
+Pass 2: set the 'random' field for the result by looking up.
+Original:
+node A        node B        node C       node D       node E
+{7, A', NULL}  {13, C', A}  {11, D', E}  {10, E', C}  {1, NULL, A}
+
+Copy:
+node A'       node B'           node C'        node D'           node E'
+{7, B', NULL} {13, C', A->A'}   {11, D', E'}   {10, E', C->D'}   {1, NULL, A->A'}
