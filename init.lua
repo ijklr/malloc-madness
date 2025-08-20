@@ -20,16 +20,3 @@ vim.g.clipboard = {
 
 vim.o.relativenumber = false
 vim.o.number = true
-
-vim.keymap.set("n", "<F10>", function()
-  if vim.o.relativenumber then
-    vim.o.relativenumber = false
-    vim.o.number = false
-    vim.o.mouse = ""
-  else
-    vim.o.relativenumber = true
-    vim.o.number = true
-    vim.o.mouse = "a"
-  end
-end, { silent = true })
-
