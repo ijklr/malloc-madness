@@ -7,6 +7,7 @@ Node* copyRandomListV1(struct Node* head);
 // More "legit" version because the free() is called correctly.
 Node* copyRandomListV2(struct Node* head);
 
+
 void print_node(Node* node) {
   const Node* head = node;
   for(int i=0; node != NULL; ++i) {
